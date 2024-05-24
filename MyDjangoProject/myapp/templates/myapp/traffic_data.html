@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--
+  Document: Traffic Volumes Report
+  Description: This HTML document is designed to display traffic volume data in a web-based format.
+  Author: Lei Luo
+-->
+
+<html lang="en">
+  <head>
+    <!-- Meta tags necessary for proper rendering and accessibility -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Traffic Volumes</title>
+
+    <!-- Internal CSS for styling the document -->
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+        color: #333;
+      }
+      header {
+        background-color: #4caf50;
+        color: white;
+        text-align: center;
+      }
+
+      h1,
+      h2 {
+        margin-top: 0;
+      }
+      .author {
+        text-align: center;
+        color: #777;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+      th,
+      td {
+        padding: 5px;
+        text-align: left;
+      }
+      th {
+        background-color: #4caf50;
+        color: white;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- Title for the page displayed in header -->
+      <h1>Traffic Volumes</h1>
+    </header>
+    <div>
+      <!-- Author's name and student number -->
+      <h2 class="author">Author: Lei Luo</h2>
+
+      <!-- Data table layout -->
+      <table>
+        <tr>
+          <th>SECTION ID</th>
+          <th>HIGHWAY</th>
+          <th>SECTION</th>
+          <th>SECTION LENGTH</th>
+          <th>SECTION DESCRIPTION</th>
+          <th>Date</th>
+          <th>DESCRIPTION</th>
+          <th>GROUP</th>
+          <th>TYPE</th>
+          <th>COUNTY</th>
+          <th>PTRUCKS</th>
+          <th>ADT</th>
+          <th>AADT</th>
+          <th>DIRECTION</th>
+          <th>85PCT</th>
+          <th>PRIORITY POINTS</th>
+        </tr>
+        <!-- Dynamic data rows filled by looping through 'data' variable -->
+        {% for item in data %}
+        <tr>
+          <td>{{ item.section_id }}</td>
+          <td>{{ item.highway }}</td>
+          <td>{{ item.section }}</td>
+          <td>{{ item.section_length }}</td>
+          <td>{{ item.section_description }}</td>
+          <td>{{ item.date }}</td>
+          <td>{{ item.description }}</td>
+          <td>{{ item.group }}</td>
+          <td>{{ item.type }}</td>
+          <td>{{ item.county }}</td>
+          <td>{{ item.ptrucks }}</td>
+          <td>{{ item.adt }}</td>
+          <td>{{ item.aadt }}</td>
+          <td>{{ item.direction }}</td>
+          <td>{{ item.pct85 }}</td>
+          <td>{{ item.priority_points }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>
