@@ -3,6 +3,7 @@
 ## Introduction
  This project demonstrates connecting a Django application to a MySQL database and displaying all records from the `traffic_volumes` table on a web page.
 My first python app beginner project lol 
+
 ![image](https://github.com/freda1874/DjangoPythonProject_Beginner/assets/85437054/7f94e565-6941-4c54-bf94-c8bd31bd8bfe)
 
 ## Features
